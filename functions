@@ -7,7 +7,7 @@ IMAGE="dokku/$APP"
 DOCKER_ARGS=$(: | pluginhook docker-args $APP)
 
 function run_docker() {
-  docker run -i $DOCKER_ARGS $IMAGE /exec "$1"
+  docker run -i $DOCKER_ARGS $IMAGE sh "$1"
 }
 
 function execute_hooks() {
